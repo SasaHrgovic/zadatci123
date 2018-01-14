@@ -15,21 +15,21 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Padding="20">
-            <Entry x:Name="NameEntry" 
+            <Entry x:Name="nameEntry" 
                    Placeholder="Ime i prezime"
                    PlaceholderColor="{StaticResource BlackFont}"
                    TextColor="{StaticResource BlackFont}"/>
-            <Entry x:Name="EmailEntry" 
+            <Entry x:Name="emailEntry" 
                    Placeholder="Email" 
                    Keyboard="Email"
                    PlaceholderColor="{StaticResource BlackFont}"
                    TextColor="{StaticResource BlackFont}"/>
-            <Entry x:Name="PasswordEntry" 
+            <Entry x:Name="passwordEntry" 
                    Placeholder="Lozinka"
                    PlaceholderColor="{StaticResource BlackFont}"
                    TextColor="{StaticResource BlackFont}"
                    IsPassword="True"/>
-            <Entry x:Name="PasswordEntryConfirm" 
+            <Entry x:Name="passwordEntryConfirm" 
                    Placeholder="Potvrda lozinke" 
                    PlaceholderColor="{StaticResource BlackFont}"
                    TextColor="{StaticResource BlackFont}"
@@ -45,6 +45,7 @@
                     Clicked="CancelButton_Clicked" 
                     TextColor="White"
                     BackgroundColor="#de0800"/>
+            <ActivityIndicator x:Name="registerActivityIndicator" Color="White" IsRunning="True" IsVisible="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

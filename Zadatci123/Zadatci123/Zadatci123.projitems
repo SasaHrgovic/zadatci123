@@ -16,6 +16,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logic\RegistrationLogic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Task.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AddEditTaskPage.xaml.cs">
       <DependentUpon>AddEditTaskPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -48,10 +52,6 @@
       <DependentUpon>TasksPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml">

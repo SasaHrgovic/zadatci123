@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Zadatci123.Models;
 
 namespace Zadatci123
 {
@@ -11,5 +12,8 @@ namespace Zadatci123
             new MobileServiceClient(
             "https://zadatci123.azurewebsites.net"
         );
+
+        public static User CurrentUser { get; set; }
+        public static List<Task> TasksList { get; set; }
     }
 }
