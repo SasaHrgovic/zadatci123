@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zadatci123.Views.RegisterPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#C30700">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="Color" 
+                        Android="White" 
+                        iOS="Black" 
+                        WinPhone="Black" 
+                        x:Key="BlackFont" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <Entry x:Name="NameEntry" 
+                   Placeholder="Ime i prezime"
+                   PlaceholderColor="{StaticResource BlackFont}"
+                   TextColor="{StaticResource BlackFont}"/>
+            <Entry x:Name="EmailEntry" 
+                   Placeholder="Email" 
+                   Keyboard="Email"
+                   PlaceholderColor="{StaticResource BlackFont}"
+                   TextColor="{StaticResource BlackFont}"/>
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="Lozinka"
+                   PlaceholderColor="{StaticResource BlackFont}"
+                   TextColor="{StaticResource BlackFont}"
+                   IsPassword="True"/>
+            <Entry x:Name="PasswordEntryConfirm" 
+                   Placeholder="Potvrda lozinke" 
+                   PlaceholderColor="{StaticResource BlackFont}"
+                   TextColor="{StaticResource BlackFont}"
+                   IsPassword="True"/>
+            <Button x:Name="registerButton" 
+                    Text="Registracija" 
+                    Clicked="RegisterButton_Clicked"
+                    TextColor="White" 
+                    BackgroundColor="#9C0600"/>
+            <Button x:Name="cancelButton" 
+                    Text="Odustani" 
+                    HorizontalOptions="End" 
+                    Clicked="CancelButton_Clicked" 
+                    TextColor="White"
+                    BackgroundColor="#de0800"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

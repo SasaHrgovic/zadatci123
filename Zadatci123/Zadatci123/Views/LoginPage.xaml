@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zadatci123.Views.LoginPage"
+             BackgroundColor="#C30700"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="Color" 
+                        Android="White" 
+                        iOS="Black" 
+                        WinPhone="Black" 
+                        x:Key="BlackFont" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout VerticalOptions="Start">
+                <Label HorizontalOptions="CenterAndExpand" 
+                   Text="Zadatci123" 
+                   FontSize="20" 
+                   TextColor="White" 
+                   Margin="0,0,0,60"/>
+                <Image Source="logoReverse.png" />
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="0,0,0,50">
+                <Entry x:Name="emailEntry" 
+                   Placeholder="Email" 
+                   Keyboard="Email" 
+                   PlaceholderColor="{StaticResource BlackFont}" 
+                   TextColor="{StaticResource BlackFont}"/>
+                <Entry x:Name="passwordEntry" 
+                   Placeholder="Lozinka" 
+                   IsPassword="True" 
+                   PlaceholderColor="{StaticResource BlackFont}" 
+                   TextColor="{StaticResource BlackFont}"/>
+                <Button x:Name="loginButton" 
+                    Text="Prijava" 
+                    Clicked="LoginButton_Clicked" 
+                    TextColor="White" 
+                    BackgroundColor="#9C0600"/>
+                <Button x:Name="registerButton" 
+                    Text="Registracija" 
+                    Clicked="RegisterButton_Clicked" 
+                    TextColor="White"
+                    BackgroundColor="#de0800"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

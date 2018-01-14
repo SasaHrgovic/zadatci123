@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zadatci123.Views.AddEditTaskPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="Dodaj zadatak" />
+                <Entry x:Name="TaskName" Placeholder="Naziv zadatka"/>
+                <Label Text="Rok za izvršenje" />
+                <StackLayout Orientation="Horizontal">
+                    <DatePicker x:Name="TaskDeadline"/>
+                    <TimePicker x:Name="TaskDedalineTime"/>
+                </StackLayout>
+                <Label Text="Prioritet"/>
+                <Picker x:Name="priorityPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Niski</x:String>
+                            <x:String>Srednji</x:String>
+                            <x:String>Visoki</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Podsjeti me"/>
+                    <Switch IsToggled="False"/>
+                </StackLayout>
+                <Button x:Name="saveTaskBtn" 
+                        Text="Spremi" 
+                        TextColor="White" 
+                        BackgroundColor="#9C0600"
+                        Clicked="SaveTaskBtn_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

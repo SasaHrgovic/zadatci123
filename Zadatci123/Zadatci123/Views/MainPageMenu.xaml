@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Zadatci123.Views"
+             x:Class="Zadatci123.Views.MainPageMenu"
+             Title="Izbornik">
+    <StackLayout>
+        <ListView x:Name="listView">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MainPageMenuItem}">
+                    <local:MainPageMenuItem 
+                        Title="Zadatci" 
+                        IconSource="tasks.png" 
+                        TargetType="{x:Type local:TasksPage}" />
+                    <local:MainPageMenuItem 
+                        Title="Podsjetnici" 
+                        IconSource="time.png" 
+                        TargetType="{x:Type local:RemindersPage}" />
+                    <local:MainPageMenuItem 
+                        Title="Odrađeno" 
+                        IconSource="check.png" 
+                        TargetType="{x:Type local:CompletedTasksPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" 
+                                   Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="logoutBtn" Clicked="LogoutBtn_Clicked" VerticalOptions="End" Text="Odjava" TextColor="Black" BackgroundColor="White" BorderWidth="0"/>
+    </StackLayout>
+</ContentPage>
