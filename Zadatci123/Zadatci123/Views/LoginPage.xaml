@@ -44,6 +44,7 @@
                     Clicked="RegisterButton_Clicked" 
                     TextColor="White"
                     BackgroundColor="#de0800"/>
+                <ActivityIndicator x:Name="loginActivityIndicator" Color="White" IsRunning="True" IsVisible="False"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
