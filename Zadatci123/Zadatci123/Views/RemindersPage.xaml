@@ -1,12 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Zadatci123.Views.RemindersPage">
+             x:Class="Zadatci123.Views.RemindersPage"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="refreshTasks" 
+                     Clicked="RefreshTasks_Clicked" 
+                     Text="Osvježi" 
+                     Icon="refresh.png"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Podsjetnici"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="tasksListView" ItemSelected="OnSelectedTask" IsPullToRefreshEnabled="True" Refreshing="TasksListRefreshing" RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="5" Spacing="1">
+                                    <Label Text="{Binding Name}" FontSize="Large"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                            <Label Text="Rok:"/>
+                                            <Label Text="{Binding DueDate, StringFormat='{0:dd.MM.yyyy}'}}" />
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Binding PriorityText}"/>
+                                            <Label Text="prioritet"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

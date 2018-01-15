@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Zadatci123.Views.TasksPage">
+             x:Class="Zadatci123.Views.TasksPage"
+             BackgroundColor="WhiteSmoke">
     <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="refreshTasks" 
+                     Clicked="RefreshTasks_Clicked" 
+                     Text="Osvježi" 
+                     Icon="refresh.png"/>
         <ToolbarItem x:Name="addTask" 
                      Clicked="AddTask_Clicked" 
                      Text="Dodaj" 
@@ -10,9 +15,33 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="tasksListView" ItemTapped="OnTappedTask" ItemSelected="OnSelectedTask" IsPullToRefreshEnabled="True" Refreshing="TasksListRefreshing" RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Završi" Clicked="OnCompleted" CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Izbriši" Clicked="OnDelete" CommandParameter="{Binding .}" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <ViewCell.View>
+                                <StackLayout Padding="5" Spacing="1">
+                                    <Label Text="{Binding Name}" FontSize="Large"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                            <Label Text="Rok:"/>
+                                            <Label Text="{Binding DueDate, StringFormat='{0:dd.MM.yyyy}'}}" />
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Binding PriorityText}"/>
+                                            <Label Text="prioritet"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -20,6 +20,8 @@ namespace Zadatci123.Views
 
         private void LogoutBtn_Clicked(object sender, EventArgs e)
         {
+            Constants.CurrentUser = null;
+            Constants.TasksList = null;
             Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
     }

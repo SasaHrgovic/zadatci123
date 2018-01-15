@@ -16,6 +16,7 @@ namespace Zadatci123.Logic
             if (user != null)
             {
                 Constants.CurrentUser = user;
+                Constants.TasksList = await TaskLogic.GetTasks();
                 return true;
             }
             else return false;

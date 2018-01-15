@@ -96,6 +96,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\check.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\refresh.png" />
+  </ItemGroup>
   <Import Project="..\Zadatci123\Zadatci123.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

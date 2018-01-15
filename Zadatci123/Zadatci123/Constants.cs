@@ -14,6 +14,6 @@ namespace Zadatci123
         );
 
         public static User CurrentUser { get; set; }
-        public static List<Task> TasksList { get; set; }
+        public static List<TaskItem> TasksList { get; set; }
     }
 }
