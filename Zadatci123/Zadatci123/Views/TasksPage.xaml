@@ -15,33 +15,47 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="tasksListView" ItemTapped="OnTappedTask" ItemSelected="OnSelectedTask" IsPullToRefreshEnabled="True" Refreshing="TasksListRefreshing" RowHeight="70">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Završi" Clicked="OnCompleted" CommandParameter="{Binding .}"/>
-                                <MenuItem Text="Izbriši" Clicked="OnDelete" CommandParameter="{Binding .}" IsDestructive="True" />
-                            </ViewCell.ContextActions>
-                            <ViewCell.View>
-                                <StackLayout Padding="5" Spacing="1">
-                                    <Label Text="{Binding Name}" FontSize="Large"/>
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                            <Label Text="Rok:"/>
-                                            <Label Text="{Binding DueDate, StringFormat='{0:dd.MM.yyyy}'}}" />
-                                        </StackLayout>
-                                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                                            <Label Text="{Binding PriorityText}"/>
-                                            <Label Text="prioritet"/>
-                                        </StackLayout>
-                                    </StackLayout>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+<ListView x:Name="tasksListView" 
+            ItemTapped="OnTappedTask" 
+            ItemSelected="OnSelectedTask" 
+            IsPullToRefreshEnabled="True" 
+            Refreshing="TasksListRefreshing" 
+            RowHeight="70">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <ViewCell.ContextActions>
+                    <MenuItem Text="Završi" 
+                                Clicked="OnCompleted" 
+                                CommandParameter="{Binding .}"/>
+                    <MenuItem Text="Izbriši" 
+                                Clicked="OnDelete" 
+                                CommandParameter="{Binding .}" 
+                                IsDestructive="True" />
+                </ViewCell.ContextActions>
+                <ViewCell.View>
+                    <StackLayout Padding="5" 
+                                    Spacing="1">
+                        <Label Text="{Binding Name}" 
+                                FontSize="Large"/>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout HorizontalOptions="StartAndExpand" 
+                                            Orientation="Horizontal">
+                                <Label Text="Rok:"/>
+                                <Label Text="{Binding DueDate, StringFormat='{0:dd.MM.yyyy}'}}" />
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="EndAndExpand" 
+                                            Orientation="Horizontal">
+                                <Label Text="{Binding PriorityText}"/>
+                                <Label Text="prioritet"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell.View>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
